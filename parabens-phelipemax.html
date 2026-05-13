@@ -1,0 +1,591 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="Pagamento confirmado na PHMAX Consultoria Online. Próximo passo: iniciar atendimento pelo WhatsApp."
+    >
+    <title>Pagamento Confirmado | PHMAX Consultoria Online</title>
+    <style>
+      :root {
+        --bg: #050505;
+        --panel: #0b0b0b;
+        --panel-2: #111111;
+        --text: #f5f7f4;
+        --muted: #a3a3a3;
+        --line: rgba(255, 255, 255, 0.1);
+        --green: #ccff00;
+        --neon: #00ff66;
+        --green-soft: rgba(204, 255, 0, 0.12);
+        --accent-gradient: linear-gradient(135deg, #ccff00 0%, #00ff66 100%);
+        --shadow: 0 24px 70px rgba(0, 0, 0, 0.5);
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      html {
+        min-height: 100%;
+        background: var(--bg);
+      }
+
+      body {
+        min-height: 100vh;
+        margin: 0;
+        padding: 26px 16px;
+        display: grid;
+        place-items: center;
+        overflow-x: hidden;
+        background:
+          radial-gradient(ellipse at 78% 0%, rgba(204, 255, 0, 0.15), transparent 36%),
+          radial-gradient(ellipse at 12% 88%, rgba(0, 255, 102, 0.12), transparent 32%),
+          linear-gradient(180deg, #050505 0%, #080808 100%);
+        color: var(--text);
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      .page-shell {
+        position: relative;
+        z-index: 1;
+        width: min(100%, 560px);
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 11px;
+        margin: 0 auto 18px;
+        color: var(--text);
+        text-decoration: none;
+      }
+
+      .brand-mark {
+        display: grid;
+        width: 42px;
+        height: 42px;
+        place-items: center;
+        border: 1px solid rgba(204, 255, 0, 0.42);
+        border-radius: 8px;
+        background: linear-gradient(145deg, rgba(204, 255, 0, 0.18), rgba(0, 255, 102, 0.08));
+        color: var(--green);
+        font-weight: 900;
+      }
+
+      .brand strong,
+      .brand small {
+        display: block;
+      }
+
+      .brand strong {
+        font-size: 0.98rem;
+        line-height: 1;
+      }
+
+      .brand small {
+        margin-top: 4px;
+        color: var(--muted);
+        font-size: 0.7rem;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .card {
+        position: relative;
+        overflow: hidden;
+        border: 1px solid rgba(204, 255, 0, 0.24);
+        border-radius: 10px;
+        background:
+          linear-gradient(145deg, rgba(204, 255, 0, 0.08), transparent 34%),
+          linear-gradient(180deg, rgba(255, 255, 255, 0.055), transparent 38%),
+          var(--panel);
+        box-shadow: var(--shadow), 0 0 52px rgba(204, 255, 0, 0.08);
+        padding: clamp(26px, 7vw, 42px);
+        text-align: center;
+        animation: fade-up 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
+      }
+
+      .card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background:
+          linear-gradient(90deg, transparent, rgba(204, 255, 0, 0.16), transparent) top / 100% 1px no-repeat,
+          radial-gradient(circle at 50% 0%, rgba(204, 255, 0, 0.14), transparent 32%);
+      }
+
+      @keyframes fade-up {
+        from {
+          opacity: 0;
+          transform: translateY(28px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .badge {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        margin-bottom: 22px;
+        border: 1px solid rgba(204, 255, 0, 0.36);
+        border-radius: 999px;
+        background: var(--green-soft);
+        color: var(--green);
+        font-size: 0.72rem;
+        font-weight: 900;
+        letter-spacing: 0.08em;
+        padding: 7px 14px;
+        text-transform: uppercase;
+      }
+
+      .badge svg {
+        width: 14px;
+        height: 14px;
+      }
+
+      .check-circle {
+        position: relative;
+        display: grid;
+        width: 88px;
+        height: 88px;
+        place-items: center;
+        margin: 0 auto 22px;
+        border-radius: 50%;
+        background: var(--accent-gradient);
+        box-shadow: 0 0 48px rgba(204, 255, 0, 0.28);
+        animation: pop-in 0.6s 0.12s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+      }
+
+      @keyframes pop-in {
+        from {
+          opacity: 0;
+          transform: scale(0.35);
+        }
+
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      .check-circle svg {
+        width: 42px;
+        height: 42px;
+        color: #050505;
+      }
+
+      h1 {
+        position: relative;
+        margin: 0;
+        color: #ffffff;
+        font-size: clamp(2rem, 8vw, 3.1rem);
+        font-weight: 950;
+        letter-spacing: 0;
+        line-height: 0.98;
+        text-transform: uppercase;
+      }
+
+      h1 span {
+        display: block;
+        margin-top: 6px;
+        background: var(--accent-gradient);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
+      .subtitle {
+        position: relative;
+        margin: 18px auto 0;
+        max-width: 430px;
+        color: #d7d7d7;
+        font-size: 1rem;
+        line-height: 1.65;
+      }
+
+      .message-box,
+      .form-box,
+      .preview-box {
+        position: relative;
+        margin-top: 22px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.045);
+        text-align: left;
+      }
+
+      .message-box {
+        padding: 18px;
+      }
+
+      .message-box p,
+      .preview-box p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.94rem;
+        line-height: 1.65;
+      }
+
+      .message-box p + p {
+        margin-top: 10px;
+      }
+
+      .message-box strong,
+      .preview-box strong {
+        color: #ffffff;
+      }
+
+      .form-box {
+        padding: 18px;
+      }
+
+      .field {
+        display: grid;
+        gap: 7px;
+      }
+
+      .field + .field {
+        margin-top: 14px;
+      }
+
+      label {
+        color: #ffffff;
+        font-size: 0.78rem;
+        font-weight: 900;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      input,
+      select {
+        width: 100%;
+        min-height: 50px;
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        border-radius: 8px;
+        background: #050505;
+        color: #ffffff;
+        font: inherit;
+        outline: none;
+        padding: 0 14px;
+      }
+
+      input:focus,
+      select:focus {
+        border-color: rgba(204, 255, 0, 0.68);
+        box-shadow: 0 0 0 4px rgba(204, 255, 0, 0.1);
+      }
+
+      .form-hint {
+        margin: 10px 0 0;
+        color: var(--green);
+        font-size: 0.82rem;
+        font-weight: 800;
+        line-height: 1.45;
+      }
+
+      .preview-box {
+        padding: 16px;
+      }
+
+      .preview-text {
+        margin-top: 8px;
+        white-space: pre-line;
+      }
+
+      .whatsapp-btn {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        width: 100%;
+        min-height: 58px;
+        margin-top: 18px;
+        border-radius: 8px;
+        background: var(--accent-gradient);
+        color: #050505;
+        font-size: 0.98rem;
+        font-weight: 950;
+        letter-spacing: 0.01em;
+        text-decoration: none;
+        text-transform: uppercase;
+        box-shadow: 0 16px 40px rgba(204, 255, 0, 0.18);
+        transition: transform 0.18s ease, box-shadow 0.18s ease, filter 0.18s ease;
+      }
+
+      .whatsapp-btn:hover,
+      .whatsapp-btn:focus-visible {
+        transform: translateY(-2px);
+        filter: brightness(1.04);
+        box-shadow: 0 22px 54px rgba(0, 255, 102, 0.18);
+      }
+
+      .whatsapp-btn svg {
+        width: 22px;
+        height: 22px;
+      }
+
+      .footer {
+        position: relative;
+        margin: 18px 0 0;
+        color: #777;
+        font-size: 0.8rem;
+      }
+
+      #confetti {
+        position: fixed;
+        inset: 0;
+        z-index: 5;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+      }
+
+      @media (max-width: 480px) {
+        body {
+          padding: 16px;
+          place-items: start center;
+        }
+
+        .brand {
+          margin-top: 4px;
+        }
+
+        .card {
+          padding: 24px 18px;
+        }
+
+        .check-circle {
+          width: 76px;
+          height: 76px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="confetti" aria-hidden="true"></canvas>
+
+    <main class="page-shell">
+      <a class="brand" href="index.html" aria-label="Voltar para PHMAX Consultoria Online">
+        <span class="brand-mark">PH</span>
+        <span>
+          <strong>PHMAX</strong>
+          <small>Consultoria Online</small>
+        </span>
+      </a>
+
+      <section class="card" aria-labelledby="page-title">
+        <div class="badge">
+          <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+            <path d="M6.5 11.5l-3-3 1.06-1.06L6.5 9.38l5.44-5.44L13 5l-6.5 6.5z"/>
+          </svg>
+          Pagamento confirmado
+        </div>
+
+        <div class="check-circle" aria-hidden="true">
+          <svg viewBox="0 0 40 40" fill="none">
+            <path d="M9 20l8 8 14-14" stroke="currentColor" stroke-width="3.7" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+
+        <h1 id="page-title">Parabéns <span>compra aprovada</span></h1>
+        <p class="subtitle">
+          Agora falta só iniciar seu atendimento pelo WhatsApp para receber os próximos passos da consultoria.
+        </p>
+
+        <div class="message-box">
+          <p><strong>Antes de entrar no WhatsApp:</strong></p>
+          <p>Confirme seu nome e o plano escolhido. A mensagem já vai pronta para eu identificar sua compra na hora.</p>
+        </div>
+
+        <div class="form-box">
+          <div class="field">
+            <label for="clientName">Seu nome</label>
+            <input id="clientName" name="clientName" type="text" autocomplete="name" placeholder="Digite seu nome completo">
+          </div>
+
+          <div class="field">
+            <label for="selectedPlan">Plano escolhido</label>
+            <select id="selectedPlan" name="selectedPlan">
+              <option value="PHMAX START Trimestral">PHMAX START Trimestral</option>
+              <option value="PHMAX START Semestral">PHMAX START Semestral</option>
+              <option value="PHMAX START Anual">PHMAX START Anual</option>
+              <option value="PHMAX PREMIUM Trimestral">PHMAX PREMIUM Trimestral</option>
+              <option value="PHMAX PREMIUM Semestral">PHMAX PREMIUM Semestral</option>
+              <option value="PHMAX PREMIUM Anual">PHMAX PREMIUM Anual</option>
+            </select>
+          </div>
+
+          <p class="form-hint" id="formHint">A mensagem do WhatsApp será montada automaticamente.</p>
+        </div>
+
+        <div class="preview-box" aria-live="polite">
+          <p><strong>Mensagem que será enviada:</strong></p>
+          <p class="preview-text" id="messagePreview"></p>
+        </div>
+
+        <a class="whatsapp-btn" id="whatsappLink" href="https://wa.me/message/6XQNUT3237WTF1" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+          Entrar no WhatsApp agora
+        </a>
+
+        <p class="footer">PHMAX Consultoria Online. Seu processo começa agora.</p>
+      </section>
+    </main>
+
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const planAliases = {
+        "start-trimestral": "PHMAX START Trimestral",
+        "start-semestral": "PHMAX START Semestral",
+        "start-anual": "PHMAX START Anual",
+        "premium-trimestral": "PHMAX PREMIUM Trimestral",
+        "premium-semestral": "PHMAX PREMIUM Semestral",
+        "premium-anual": "PHMAX PREMIUM Anual"
+      };
+
+      const whatsappBase = "https://wa.me/message/6XQNUT3237WTF1";
+      const nameInput = document.getElementById("clientName");
+      const planSelect = document.getElementById("selectedPlan");
+      const hint = document.getElementById("formHint");
+      const preview = document.getElementById("messagePreview");
+      const whatsappLink = document.getElementById("whatsappLink");
+
+      const urlName = params.get("nome") || params.get("name") || "";
+      const urlPlan = params.get("plano") || params.get("plan") || "premium-semestral";
+      const selectedPlan = planAliases[urlPlan] || urlPlan;
+
+      if (urlName) {
+        nameInput.value = urlName;
+      }
+
+      if ([...planSelect.options].some((option) => option.value === selectedPlan)) {
+        planSelect.value = selectedPlan;
+      }
+
+      function buildMessage() {
+        const name = nameInput.value.trim() || "[nome do aluno]";
+        const plan = planSelect.value;
+        const receiptUrl = params.get("receipt_url");
+        const orderNsu = params.get("order_nsu");
+        const extra = [];
+
+        if (orderNsu) {
+          extra.push(`Pedido: ${orderNsu}`);
+        }
+
+        if (receiptUrl) {
+          extra.push(`Comprovante: ${receiptUrl}`);
+        }
+
+        return [
+          "Olá, Phelipe! Meu pagamento foi aprovado.",
+          `Nome: ${name}`,
+          `Plano: ${plan}`,
+          "Quero iniciar minha consultoria PHMAX.",
+          ...extra
+        ].join("\n");
+      }
+
+      function updateWhatsappLink() {
+        const message = buildMessage();
+        preview.textContent = message;
+        whatsappLink.href = `${whatsappBase}?text=${encodeURIComponent(message)}`;
+      }
+
+      nameInput.addEventListener("input", () => {
+        hint.textContent = "A mensagem do WhatsApp será montada automaticamente.";
+        updateWhatsappLink();
+      });
+      planSelect.addEventListener("change", updateWhatsappLink);
+
+      whatsappLink.addEventListener("click", (event) => {
+        if (!nameInput.value.trim()) {
+          event.preventDefault();
+          hint.textContent = "Digite seu nome para eu identificar sua compra no WhatsApp.";
+          nameInput.focus();
+        }
+      });
+
+      updateWhatsappLink();
+
+      const canvas = document.getElementById("confetti");
+      const ctx = canvas.getContext("2d");
+
+      function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      }
+
+      resizeCanvas();
+      window.addEventListener("resize", resizeCanvas);
+
+      const colors = ["#ccff00", "#00ff66", "#ffffff", "#dfffb0", "#77ff66"];
+      const pieces = Array.from({ length: 96 }, () => ({
+        x: Math.random() * canvas.width,
+        y: -Math.random() * 320 - 10,
+        r: Math.random() * 7 + 3,
+        d: Math.random() * 2.4 + 1,
+        color: colors[Math.floor(Math.random() * colors.length)],
+        tiltAngle: Math.random() * Math.PI * 2,
+        tiltSpeed: Math.random() * 0.08 + 0.03,
+        opacity: Math.random() * 0.58 + 0.42,
+        done: false
+      }));
+
+      function animateConfetti() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        let allDone = true;
+
+        pieces.forEach((piece) => {
+          if (piece.done) {
+            return;
+          }
+
+          allDone = false;
+          piece.tiltAngle += piece.tiltSpeed;
+          piece.y += piece.d;
+          const tilt = Math.sin(piece.tiltAngle) * 13;
+
+          if (piece.y > canvas.height + 20) {
+            piece.done = true;
+            return;
+          }
+
+          ctx.save();
+          ctx.globalAlpha = piece.opacity;
+          ctx.fillStyle = piece.color;
+          ctx.translate(piece.x + piece.r, piece.y + piece.r);
+          ctx.rotate((tilt * Math.PI) / 180);
+          ctx.fillRect(-piece.r, -piece.r, piece.r * 2, piece.r * 2);
+          ctx.restore();
+        });
+
+        if (!allDone) {
+          requestAnimationFrame(animateConfetti);
+        } else {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+        }
+      }
+
+      setTimeout(animateConfetti, 450);
+    </script>
+  </body>
+</html>

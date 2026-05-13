@@ -1,0 +1,18 @@
+.DS_Store
+teste.txt
+
+# Arquivos de outros projetos nesta mesma pasta
+PROJETO JULIANA 2026/
+app.html
+app.css
+app.js
+
+# Arquivos-fonte e versões antigas que não são usados pela landing
+assets/hero-phmax.png
+assets/benefits/*.png
+assets/phelipe/*source*
+assets/phelipe/phelipe-authority.jpg
+assets/phelipe/phelipe-authority-office.jpg
+assets/phelipe/phelipe-hero-office.png
+assets/phelipe/phelipe-profile-alt.jpg
+assets/testimonials/depoimento-03.webp
