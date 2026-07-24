@@ -39,7 +39,7 @@ body {
     radial-gradient(ellipse at 12% 20%, rgba(0, 255, 102, 0.055), transparent 30%),
     var(--bg);
   color: var(--text);
-  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Helvetica Neue", -apple-system, BlinkMacSystemFont, "SF Pro Text", Arial, sans-serif;
   line-height: 1.5;
 }
 
@@ -2490,5 +2490,175 @@ body {
   .instagram-icon svg {
     width: 24px;
     height: 24px;
+  }
+}
+
+/* Premium visual pass */
+body {
+  font-weight: 380;
+}
+
+.site-header,
+.hero-proof,
+.rating-proof,
+.instagram-proof,
+.authority-strip-inner,
+.diagnostic-card,
+.benefit-card,
+.process-card,
+.plan-card,
+.faq-list details,
+.payment-safe-note,
+.offer-highlight {
+  border-color: rgba(204, 255, 0, 0.16);
+}
+
+.site-header,
+.rating-proof,
+.instagram-proof,
+.authority-strip-inner,
+.diagnostic-card,
+.plan-card,
+.offer-highlight {
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.018)),
+    rgba(6, 6, 6, 0.86);
+}
+
+.hero h1,
+.section-copy h2,
+.section-heading h2,
+.fit-summary h2,
+.decision-band h2,
+.final-cta h2,
+.authority-copy h2 {
+  font-weight: 680;
+  line-height: 1.02;
+}
+
+.hero h1 strong,
+.benefits-title span,
+.section-closing span,
+.final-note {
+  filter: drop-shadow(0 0 14px rgba(204, 255, 0, 0.1));
+}
+
+.eyebrow,
+.section-kicker,
+.result-kicker,
+.diagnostic-step,
+.diagnostic-need strong,
+.popular-badge,
+.price-label em,
+.offer-price-callout span {
+  font-size: 0.76rem;
+  font-weight: 650;
+}
+
+.brand strong,
+.nav,
+.btn,
+.mobile-sticky-cta {
+  font-weight: 680;
+}
+
+.brand small,
+.hero-proof span,
+.rating-proof span,
+.instagram-proof span,
+.authority-strip-inner span,
+.section-copy p:not(.section-kicker),
+.section-heading p:not(.section-kicker),
+.fit-summary p,
+.decision-band p,
+.final-cta p,
+.benefit-card p,
+.process-card p,
+.plan-card p,
+.faq-list p,
+.price-installment,
+.payment-safe-note span {
+  font-weight: 400;
+}
+
+.hero-proof strong,
+.rating-proof strong,
+.instagram-proof strong,
+.authority-strip-inner h2,
+.diagnostic-card h3,
+.diagnostic-option,
+.benefit-card h3,
+.process-card h3,
+.plan-card h3,
+.offer-highlight h3,
+.price-total,
+.faq-list summary,
+.site-footer p,
+.site-footer a {
+  font-weight: 650;
+}
+
+.rating-proof strong,
+.instagram-proof strong {
+  font-size: clamp(1.08rem, 2.2vw, 1.82rem);
+}
+
+.instagram-icon {
+  overflow: hidden;
+  background: transparent;
+  border-radius: 15px;
+  box-shadow: 0 14px 32px rgba(224, 0, 128, 0.16);
+}
+
+.instagram-icon img {
+  display: block;
+  width: 58px;
+  height: 58px;
+  object-fit: cover;
+}
+
+.instagram-icon svg {
+  display: none;
+}
+
+.btn {
+  min-height: 54px;
+  box-shadow: none;
+}
+
+.btn-primary,
+.mobile-sticky-cta {
+  box-shadow: 0 16px 40px rgba(0, 255, 102, 0.14);
+}
+
+.btn-outline {
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.stars {
+  font-size: clamp(1.5rem, 3vw, 2.35rem);
+  text-shadow: 0 0 16px rgba(255, 211, 56, 0.12);
+}
+
+.card-icon,
+.process-card span,
+.brand-mark {
+  box-shadow: none;
+}
+
+@media (max-width: 700px) {
+  .hero h1,
+  .section-copy h2,
+  .section-heading h2,
+  .fit-summary h2,
+  .decision-band h2,
+  .final-cta h2 {
+    font-weight: 680;
+  }
+
+  .instagram-icon,
+  .instagram-icon img {
+    width: 46px;
+    height: 46px;
   }
 }
