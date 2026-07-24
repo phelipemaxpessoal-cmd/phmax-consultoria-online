@@ -1,26 +1,207 @@
+document.documentElement.classList.add("is-ready");
+
 const body = document.body;
 const header = document.querySelector("[data-header]");
 const menuToggle = document.querySelector("[data-menu-toggle]");
 const nav = document.querySelector("[data-nav]");
 
 function setHeaderState() {
+  if (!header) {
+    return;
+  }
+
   header.classList.toggle("is-scrolled", window.scrollY > 20);
 }
 
 setHeaderState();
 window.addEventListener("scroll", setHeaderState, { passive: true });
 
-menuToggle.addEventListener("click", () => {
-  const isOpen = body.classList.toggle("menu-open");
-  menuToggle.setAttribute("aria-expanded", String(isOpen));
-});
+if (menuToggle && nav) {
+  menuToggle.addEventListener("click", () => {
+    const isOpen = body.classList.toggle("menu-open");
+    menuToggle.setAttribute("aria-expanded", String(isOpen));
+  });
 
-nav.addEventListener("click", (event) => {
-  if (event.target.closest("a")) {
-    body.classList.remove("menu-open");
-    menuToggle.setAttribute("aria-expanded", "false");
+  nav.addEventListener("click", (event) => {
+    if (event.target.closest("a")) {
+      body.classList.remove("menu-open");
+      menuToggle.setAttribute("aria-expanded", "false");
+    }
+  });
+}
+
+function setupMobileStickyCta() {
+  const triggerSections = Array.from(document.querySelectorAll("#planos, #cta-final"));
+  const stickyCta = document.querySelector(".mobile-sticky-cta");
+
+  if (!triggerSections.length || !stickyCta) {
+    return;
   }
-});
+
+  function setStickyState(isVisible) {
+    body.classList.toggle("show-mobile-cta", isVisible);
+  }
+
+  if ("IntersectionObserver" in window) {
+    const visibleSections = new Set();
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && entry.intersectionRatio > 0.04) {
+            visibleSections.add(entry.target);
+            return;
+          }
+
+          visibleSections.delete(entry.target);
+        });
+
+        setStickyState(visibleSections.size > 0);
+      },
+      {
+        rootMargin: "-16% 0px -24% 0px",
+        threshold: [0, 0.04, 0.18],
+      }
+    );
+
+    triggerSections.forEach((section) => observer.observe(section));
+    return;
+  }
+
+  function updateFromScroll() {
+    const viewportMiddle = window.scrollY + window.innerHeight * 0.58;
+    const isInsideDecisionArea = triggerSections.some((section) => {
+      const top = section.offsetTop;
+      const bottom = top + section.offsetHeight;
+
+      return viewportMiddle >= top && viewportMiddle <= bottom;
+    });
+
+    setStickyState(isInsideDecisionArea);
+  }
+
+  updateFromScroll();
+  window.addEventListener("scroll", updateFromScroll, { passive: true });
+}
+
+function setupDiagnostic() {
+  const diagnostic = document.querySelector("[data-diagnostic]");
+
+  if (!diagnostic) {
+    return;
+  }
+
+  const quiz = diagnostic.querySelector("[data-diagnostic-quiz]");
+  const result = diagnostic.querySelector("[data-diagnostic-result]");
+  const progress = diagnostic.querySelector("[data-diagnostic-progress]");
+  const step = diagnostic.querySelector("[data-diagnostic-step]");
+  const icon = diagnostic.querySelector("[data-diagnostic-icon]");
+  const question = diagnostic.querySelector("[data-diagnostic-question]");
+  const options = diagnostic.querySelector("[data-diagnostic-options]");
+  const reset = diagnostic.querySelector("[data-diagnostic-reset]");
+
+  if (!quiz || !result || !progress || !step || !icon || !question || !options || !reset) {
+    return;
+  }
+
+  const questions = [
+    {
+      icon: "💭",
+      text: "Quando você pensa no seu corpo hoje, o que mais te incomoda?",
+      options: [
+        "Me esforço muito e quase nada muda",
+        "Começo, paro, recomeço... e cansei disso",
+        "Nunca tive orientação de verdade",
+        "Já tive resultado antes, mas voltou tudo",
+      ],
+    },
+    {
+      icon: "⏳",
+      text: "Isso está acontecendo faz quanto tempo?",
+      options: [
+        "Menos de 6 meses",
+        "Entre 1 e 3 anos",
+        "Mais de 3 anos",
+        "A vida inteira, nunca consegui manter",
+      ],
+    },
+    {
+      icon: "🚧",
+      text: "O que mais sabota quando você tenta mudar?",
+      options: [
+        "A dieta fica impossível de seguir",
+        "Começo forte, mas perco o ritmo rápido",
+        "Treino muito e não vejo resultado",
+        "Ansiedade, compulsão ou estresse atrapalham",
+      ],
+    },
+    {
+      icon: "🎯",
+      text: "Se esse obstáculo sumisse, qual seria seu objetivo principal?",
+      options: [
+        "Emagrecer e tirar esse peso de vez",
+        "Ganhar músculo e ficar definido",
+        "Emagrecer e ganhar massa ao mesmo tempo",
+        "Saúde e bem-estar no meu próprio corpo",
+      ],
+    },
+    {
+      icon: "✨",
+      text: "Chegando lá de verdade, o que mudaria na sua vida?",
+      options: [
+        "Minha autoestima e confiança voltariam",
+        "Teria mais energia no dia a dia",
+        "Me sentiria bem olhando no espelho",
+        "Pararia de adiar e viveria de verdade",
+      ],
+    },
+  ];
+
+  let currentQuestion = 0;
+
+  function showQuestion() {
+    const activeQuestion = questions[currentQuestion];
+    const progressValue = ((currentQuestion + 1) / questions.length) * 100;
+
+    quiz.hidden = false;
+    result.hidden = true;
+    progress.style.width = `${progressValue}%`;
+    step.textContent = `Pergunta ${currentQuestion + 1} de ${questions.length}`;
+    icon.textContent = activeQuestion.icon;
+    question.textContent = activeQuestion.text;
+    options.replaceChildren();
+
+    activeQuestion.options.forEach((option) => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "diagnostic-option";
+      button.textContent = option;
+      button.addEventListener("click", () => {
+        if (currentQuestion < questions.length - 1) {
+          currentQuestion += 1;
+          showQuestion();
+          return;
+        }
+
+        showResult();
+      });
+
+      options.appendChild(button);
+    });
+  }
+
+  function showResult() {
+    quiz.hidden = true;
+    result.hidden = false;
+    progress.style.width = "100%";
+  }
+
+  reset.addEventListener("click", () => {
+    currentQuestion = 0;
+    showQuestion();
+  });
+
+  showQuestion();
+}
 
 function setupHorizontalCarousel({
   rootSelector,
@@ -172,6 +353,9 @@ function setupHorizontalCarousel({
   window.requestAnimationFrame(() => scrollToCard(0, "auto"));
   startAutoPlay();
 }
+
+setupMobileStickyCta();
+setupDiagnostic();
 
 setupHorizontalCarousel({
   rootSelector: "[data-results-carousel]",
