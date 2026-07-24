@@ -39,7 +39,7 @@ body {
     radial-gradient(ellipse at 12% 20%, rgba(0, 255, 102, 0.055), transparent 30%),
     var(--bg);
   color: var(--text);
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
   line-height: 1.5;
 }
 
@@ -108,7 +108,7 @@ ul {
   border-radius: 8px;
   background: linear-gradient(145deg, rgba(204, 255, 0, 0.18), rgba(0, 255, 102, 0.08));
   color: var(--green);
-  font-weight: 900;
+  font-weight: 800;
 }
 
 .brand strong {
@@ -225,7 +225,7 @@ ul {
 .section-kicker {
   color: var(--green);
   font-size: 0.8rem;
-  font-weight: 900;
+  font-weight: 800;
   text-transform: uppercase;
 }
 
@@ -234,7 +234,7 @@ ul {
   margin-top: 20px;
   font-size: clamp(3rem, 6.2vw, 6.4rem);
   line-height: 0.96;
-  font-weight: 950;
+  font-weight: 800;
 }
 
 .hero h1 span {
@@ -274,7 +274,7 @@ ul {
   border: 1px solid transparent;
   border-radius: 8px;
   font-size: 0.92rem;
-  font-weight: 950;
+  font-weight: 800;
   text-align: center;
   text-transform: uppercase;
   transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
@@ -340,7 +340,7 @@ ul {
 .hero-proof strong {
   color: var(--text);
   font-size: 0.94rem;
-  font-weight: 950;
+  font-weight: 800;
   text-transform: uppercase;
 }
 
@@ -401,7 +401,7 @@ ul {
   background: linear-gradient(145deg, #833ab4, #fd1d1d 52%, #fcb045);
   color: #ffffff;
   font-size: 1.12rem;
-  font-weight: 950;
+  font-weight: 800;
   box-shadow: 0 14px 34px rgba(253, 29, 29, 0.16);
 }
 
@@ -417,7 +417,7 @@ ul {
   color: var(--text);
   font-size: clamp(1.16rem, 2.5vw, 2.1rem);
   line-height: 1.02;
-  font-weight: 950;
+  font-weight: 800;
 }
 
 .rating-proof span,
@@ -425,7 +425,7 @@ ul {
   margin-top: 8px;
   color: rgba(245, 247, 244, 0.72);
   font-size: clamp(0.9rem, 1.45vw, 1.08rem);
-  font-weight: 780;
+  font-weight: 600;
 }
 
 .section {
@@ -454,7 +454,7 @@ ul {
   margin-top: 12px;
   font-size: clamp(2.2rem, 4.6vw, 4.2rem);
   line-height: 1;
-  font-weight: 950;
+  font-weight: 800;
 }
 
 .section-copy p:not(.section-kicker),
@@ -493,7 +493,7 @@ ul {
   position: relative;
   padding-left: 30px;
   color: rgba(245, 247, 244, 0.86);
-  font-weight: 750;
+  font-weight: 600;
 }
 
 .plan-list li::before {
@@ -566,7 +566,7 @@ ul {
   color: var(--text);
   font-size: clamp(1.18rem, 2.4vw, 1.7rem);
   line-height: 1.08;
-  font-weight: 950;
+  font-weight: 800;
 }
 
 .authority-strip-inner span {
@@ -574,7 +574,7 @@ ul {
   margin-top: 7px;
   color: rgba(245, 247, 244, 0.68);
   font-size: 0.95rem;
-  font-weight: 750;
+  font-weight: 600;
 }
 
 .diagnostic-section {
@@ -622,7 +622,7 @@ ul {
   margin-top: 26px;
   color: rgba(245, 247, 244, 0.56);
   font-size: 0.76rem;
-  font-weight: 950;
+  font-weight: 800;
   text-align: center;
   text-transform: uppercase;
 }
@@ -638,7 +638,7 @@ ul {
   margin: 0 auto;
   font-size: clamp(1.65rem, 3vw, 2.65rem);
   line-height: 1.06;
-  font-weight: 950;
+  font-weight: 800;
   text-align: center;
 }
 
@@ -661,7 +661,7 @@ ul {
   background: rgba(255, 255, 255, 0.055);
   color: rgba(245, 247, 244, 0.9);
   font: inherit;
-  font-weight: 850;
+  font-weight: 700;
   text-align: left;
   cursor: pointer;
   transition: border-color 0.18s ease, background 0.18s ease, transform 0.18s ease;
@@ -704,8 +704,8 @@ ul {
 .result-kicker {
   color: var(--green);
   font-size: 0.78rem;
-  font-weight: 950;
-  letter-spacing: 0.08em;
+  font-weight: 800;
+  letter-spacing: 0;
   text-transform: uppercase;
 }
 
@@ -727,13 +727,13 @@ ul {
 .diagnostic-need strong {
   color: var(--green);
   font-size: 0.86rem;
-  font-weight: 950;
+  font-weight: 800;
   text-transform: uppercase;
 }
 
 .diagnostic-need span {
   color: rgba(245, 247, 244, 0.82);
-  font-weight: 750;
+  font-weight: 600;
 }
 
 .diagnostic-actions {
@@ -750,7 +750,7 @@ ul {
   color: rgba(245, 247, 244, 0.62);
   font: inherit;
   font-size: 0.92rem;
-  font-weight: 850;
+  font-weight: 700;
   cursor: pointer;
 }
 
@@ -810,7 +810,7 @@ ul {
   margin-top: 12px;
   font-size: clamp(2.35rem, 4.8vw, 4.5rem);
   line-height: 0.98;
-  font-weight: 950;
+  font-weight: 800;
 }
 
 .authority-copy p:not(.section-kicker) {
@@ -841,7 +841,7 @@ ul {
   display: block;
   color: var(--green);
   font-size: 1.22rem;
-  font-weight: 950;
+  font-weight: 800;
 }
 
 .authority-stats span {
@@ -849,7 +849,7 @@ ul {
   margin-top: 7px;
   color: rgba(245, 247, 244, 0.64);
   font-size: 0.78rem;
-  font-weight: 850;
+  font-weight: 700;
   text-transform: uppercase;
 }
 
@@ -977,7 +977,7 @@ ul {
   margin-top: 0;
   color: var(--green);
   font-size: clamp(1.02rem, 1.55vw, 1.32rem);
-  font-weight: 950;
+  font-weight: 800;
   text-transform: uppercase;
 }
 
@@ -1007,7 +1007,7 @@ ul {
   margin-top: 14px;
   color: rgba(245, 247, 244, 0.54);
   font-size: 0.95rem;
-  font-weight: 750;
+  font-weight: 600;
 }
 
 .process-section {
@@ -1048,7 +1048,7 @@ ul {
   background: rgba(204, 255, 0, 0.08);
   color: var(--green);
   font-size: 1.28rem;
-  font-weight: 950;
+  font-weight: 800;
 }
 
 .section-closing {
@@ -1056,7 +1056,7 @@ ul {
   margin: 42px auto 0;
   color: var(--text);
   font-size: clamp(1.4rem, 3vw, 2rem);
-  font-weight: 950;
+  font-weight: 800;
   text-align: center;
 }
 
@@ -1107,7 +1107,7 @@ ul {
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.04);
   color: rgba(245, 247, 244, 0.88);
-  font-weight: 850;
+  font-weight: 700;
 }
 
 .fit-warning {
@@ -1115,7 +1115,7 @@ ul {
   padding-top: 22px;
   border-top: 1px solid rgba(255, 95, 87, 0.24);
   color: rgba(245, 247, 244, 0.8);
-  font-weight: 850;
+  font-weight: 700;
 }
 
 .results-section {
@@ -1204,7 +1204,7 @@ ul {
 .result-caption strong {
   color: var(--text);
   font-size: 0.92rem;
-  font-weight: 950;
+  font-weight: 800;
   text-transform: uppercase;
 }
 
@@ -1224,7 +1224,7 @@ ul {
   margin: 7px 0 0;
   color: #ffffff;
   font-size: clamp(1.65rem, 4vw, 2.7rem);
-  font-weight: 950;
+  font-weight: 800;
   letter-spacing: 0;
   line-height: 1.02;
   text-transform: uppercase;
@@ -1265,14 +1265,14 @@ ul {
 .results-note strong {
   color: var(--green);
   font-size: 1.02rem;
-  font-weight: 950;
+  font-weight: 800;
 }
 
 .results-note span {
   max-width: 500px;
   color: rgba(245, 247, 244, 0.68);
   font-size: 0.92rem;
-  font-weight: 750;
+  font-weight: 600;
   text-align: right;
 }
 
@@ -1307,7 +1307,7 @@ ul {
   margin-top: 8px;
   font-size: clamp(2rem, 4vw, 3.65rem);
   line-height: 0.98;
-  font-weight: 950;
+  font-weight: 800;
 }
 
 .offer-highlight p:not(.section-kicker) {
@@ -1331,7 +1331,7 @@ ul {
   background: rgba(255, 255, 255, 0.04);
   color: rgba(245, 247, 244, 0.86);
   font-size: 0.86rem;
-  font-weight: 850;
+  font-weight: 700;
 }
 
 .offer-price-callout {
@@ -1350,7 +1350,7 @@ ul {
 .offer-price-callout span {
   color: var(--green);
   font-size: 0.82rem;
-  font-weight: 950;
+  font-weight: 800;
   text-transform: uppercase;
 }
 
@@ -1361,14 +1361,14 @@ ul {
   background-clip: text;
   color: transparent;
   font-size: clamp(2.8rem, 5vw, 4.4rem);
-  font-weight: 950;
+  font-weight: 800;
   line-height: 0.95;
 }
 
 .offer-price-callout p {
   margin: 8px 0 18px;
   color: rgba(245, 247, 244, 0.74);
-  font-weight: 850;
+  font-weight: 700;
 }
 
 .plan-card {
@@ -1394,7 +1394,7 @@ ul {
   background: var(--accent-gradient);
   color: #030303;
   font-size: 0.78rem;
-  font-weight: 950;
+  font-weight: 800;
   text-transform: uppercase;
 }
 
@@ -1462,7 +1462,7 @@ ul {
 .price-label span {
   color: rgba(245, 247, 244, 0.74);
   font-size: 0.82rem;
-  font-weight: 950;
+  font-weight: 800;
   text-transform: uppercase;
 }
 
@@ -1474,7 +1474,7 @@ ul {
   color: #030303;
   font-size: 0.72rem;
   font-style: normal;
-  font-weight: 950;
+  font-weight: 800;
   text-transform: uppercase;
 }
 
@@ -1483,7 +1483,7 @@ ul {
   margin-top: 12px;
   color: var(--text);
   font-size: clamp(2.45rem, 5vw, 4rem);
-  font-weight: 950;
+  font-weight: 800;
   letter-spacing: 0;
   line-height: 0.95;
 }
@@ -1506,7 +1506,7 @@ ul {
 
 .price-installment b {
   color: var(--text);
-  font-weight: 950;
+  font-weight: 800;
 }
 
 .payment-safe-note {
@@ -1532,7 +1532,7 @@ ul {
 .payment-safe-note strong {
   color: var(--green);
   font-size: 0.9rem;
-  font-weight: 950;
+  font-weight: 800;
   text-transform: uppercase;
 }
 
@@ -1575,7 +1575,7 @@ ul {
   margin-top: 18px;
   color: var(--text);
   font-size: 1.04rem;
-  font-weight: 950;
+  font-weight: 800;
 }
 
 .faq-section {
@@ -1598,7 +1598,7 @@ ul {
   padding: 22px 0;
   color: var(--text);
   font-size: 1.08rem;
-  font-weight: 900;
+  font-weight: 800;
 }
 
 .faq-list summary::marker {
@@ -1634,7 +1634,7 @@ ul {
 }
 
 .final-note {
-  font-weight: 900;
+  font-weight: 800;
 }
 
 .site-footer {
@@ -1650,12 +1650,12 @@ ul {
 }
 
 .site-footer p {
-  font-weight: 900;
+  font-weight: 800;
 }
 
 .site-footer a {
   color: var(--green);
-  font-weight: 900;
+  font-weight: 800;
 }
 
 .mobile-sticky-cta {
@@ -1818,7 +1818,7 @@ ul {
   color: #030303;
   cursor: pointer;
   font-size: 2.2rem;
-  font-weight: 950;
+  font-weight: 800;
   line-height: 1;
   box-shadow: 0 18px 44px rgba(0, 0, 0, 0.48), 0 0 30px rgba(204, 255, 0, 0.2);
   transition: transform 0.18s ease, filter 0.18s ease;
@@ -2295,7 +2295,7 @@ ul {
     background: var(--accent-gradient);
     color: #030303;
     font-size: 0.96rem;
-    font-weight: 950;
+    font-weight: 800;
     letter-spacing: 0;
     text-align: center;
     text-transform: uppercase;
@@ -2326,5 +2326,169 @@ ul {
   .whatsapp-float svg {
     width: 27px;
     height: 27px;
+  }
+}
+
+/* Clean typography pass */
+body {
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: geometricPrecision;
+}
+
+.brand strong,
+.brand small,
+.nav,
+.eyebrow,
+.section-kicker,
+.btn,
+.urgency,
+.hero-proof strong,
+.rating-proof strong,
+.instagram-proof strong,
+.section-copy h2,
+.section-heading h2,
+.fit-summary h2,
+.decision-band h2,
+.final-cta h2,
+.authority-strip-inner h2,
+.diagnostic-card h3,
+.result-kicker,
+.diagnostic-need strong,
+.authority-copy h2,
+.authority-stats strong,
+.benefit-card h3,
+.process-card h3,
+.plan-card h3,
+.section-closing,
+.popular-badge,
+.offer-highlight h3,
+.offer-price-callout strong,
+.price-total,
+.faq-list summary,
+.site-footer p,
+.site-footer a,
+.mobile-sticky-cta {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+}
+
+.hero h1 {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.section-copy h2,
+.section-heading h2,
+.fit-summary h2,
+.decision-band h2,
+.final-cta h2,
+.authority-copy h2 {
+  font-weight: 800;
+  letter-spacing: 0;
+}
+
+.diagnostic-card h3,
+.benefit-card h3,
+.process-card h3,
+.plan-card h3,
+.offer-highlight h3,
+.authority-strip-inner h2,
+.rating-proof strong,
+.instagram-proof strong,
+.price-total {
+  font-weight: 800;
+  letter-spacing: 0;
+}
+
+.eyebrow,
+.section-kicker,
+.result-kicker,
+.popular-badge,
+.price-label em,
+.offer-price-callout span,
+.diagnostic-step,
+.diagnostic-need strong {
+  font-weight: 800;
+  letter-spacing: 0;
+}
+
+.btn,
+.nav,
+.mobile-sticky-cta {
+  font-weight: 800;
+  letter-spacing: 0;
+}
+
+.brand-mark {
+  font-weight: 800;
+}
+
+.brand strong,
+.site-footer p,
+.site-footer a {
+  font-weight: 700;
+}
+
+.brand small,
+.hero-proof span,
+.rating-proof span,
+.instagram-proof span,
+.authority-strip-inner span,
+.x-list li,
+.plan-list li,
+.secure-note,
+.diagnostic-need span,
+.authority-stats span,
+.offer-mini-list li,
+.price-installment,
+.payment-safe-note span {
+  font-weight: 600;
+}
+
+.hero-proof strong,
+.urgency,
+.diagnostic-option,
+.diagnostic-reset,
+.authority-stats strong,
+.section-closing,
+.popular-badge,
+.faq-list summary {
+  font-weight: 600;
+}
+
+.instagram-icon svg {
+  width: 30px;
+  height: 30px;
+}
+
+.instagram-icon rect,
+.instagram-icon circle {
+  fill: none;
+  stroke: #ffffff;
+  stroke-width: 1.9;
+}
+
+.instagram-icon circle:last-child {
+  fill: #ffffff;
+  stroke: none;
+}
+
+@media (max-width: 700px) {
+  .hero h1 {
+    font-weight: 800;
+  }
+
+  .section-copy h2,
+  .section-heading h2,
+  .fit-summary h2,
+  .decision-band h2,
+  .final-cta h2 {
+    font-weight: 800;
+  }
+
+  .instagram-icon svg {
+    width: 24px;
+    height: 24px;
   }
 }
