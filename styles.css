@@ -383,13 +383,24 @@ ul {
   box-shadow: 0 18px 50px rgba(0, 0, 0, 0.28);
 }
 
-.stars {
-  color: #ffd338;
-  font-size: clamp(1.8rem, 3.6vw, 3rem);
+.ph-seal {
+  display: grid;
+  width: 58px;
+  height: 58px;
+  place-items: center;
+  border: 1px solid rgba(204, 255, 0, 0.34);
+  border-radius: 15px;
+  background:
+    linear-gradient(145deg, rgba(204, 255, 0, 0.16), rgba(0, 255, 102, 0.05)),
+    rgba(5, 5, 5, 0.74);
+  color: var(--green);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.045);
+}
+
+.ph-seal span {
+  font-size: 1.05rem;
+  font-weight: 800;
   line-height: 1;
-  letter-spacing: 0;
-  text-shadow: 0 0 22px rgba(255, 211, 56, 0.18);
-  white-space: nowrap;
 }
 
 .instagram-icon {
@@ -1287,90 +1298,6 @@ ul {
   align-items: stretch;
 }
 
-.offer-highlight {
-  display: grid;
-  grid-column: 1 / -1;
-  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.42fr);
-  gap: 24px;
-  align-items: center;
-  padding: 30px;
-  border: 1px solid rgba(204, 255, 0, 0.62);
-  border-radius: 8px;
-  background:
-    radial-gradient(ellipse at 15% 0%, rgba(204, 255, 0, 0.2), transparent 48%),
-    linear-gradient(135deg, rgba(204, 255, 0, 0.12), rgba(0, 255, 102, 0.04)),
-    var(--panel);
-  box-shadow: 0 30px 78px rgba(0, 0, 0, 0.5), 0 0 34px rgba(204, 255, 0, 0.1);
-}
-
-.offer-highlight h3 {
-  margin-top: 8px;
-  font-size: clamp(2rem, 4vw, 3.65rem);
-  line-height: 0.98;
-  font-weight: 800;
-}
-
-.offer-highlight p:not(.section-kicker) {
-  max-width: 690px;
-  margin-top: 14px;
-  color: rgba(245, 247, 244, 0.76);
-  font-size: 1.02rem;
-}
-
-.offer-mini-list {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 9px;
-  margin-top: 20px;
-}
-
-.offer-mini-list li {
-  padding: 11px 12px;
-  border: 1px solid rgba(204, 255, 0, 0.24);
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.04);
-  color: rgba(245, 247, 244, 0.86);
-  font-size: 0.86rem;
-  font-weight: 700;
-}
-
-.offer-price-callout {
-  padding: 22px;
-  border: 1px solid rgba(204, 255, 0, 0.4);
-  border-radius: 8px;
-  background: rgba(5, 5, 5, 0.58);
-}
-
-.offer-price-callout span,
-.offer-price-callout strong,
-.offer-price-callout p {
-  display: block;
-}
-
-.offer-price-callout span {
-  color: var(--green);
-  font-size: 0.82rem;
-  font-weight: 800;
-  text-transform: uppercase;
-}
-
-.offer-price-callout strong {
-  margin-top: 8px;
-  background: var(--accent-gradient-vertical);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  font-size: clamp(2.8rem, 5vw, 4.4rem);
-  font-weight: 800;
-  line-height: 0.95;
-}
-
-.offer-price-callout p {
-  margin: 8px 0 18px;
-  color: rgba(245, 247, 244, 0.74);
-  font-weight: 700;
-}
-
 .plan-card {
   position: relative;
   display: flex;
@@ -1967,8 +1894,10 @@ ul {
     gap: 12px;
   }
 
-  .stars {
-    font-size: 1.6rem;
+  .ph-seal {
+    width: 46px;
+    height: 46px;
+    border-radius: 12px;
   }
 
   .instagram-icon {
@@ -2118,40 +2047,6 @@ ul {
     margin-top: 8px;
     font-size: 0.78rem;
     line-height: 1.34;
-  }
-
-  .offer-highlight {
-    grid-template-columns: 1fr;
-    gap: 16px;
-    padding: 18px;
-  }
-
-  .offer-highlight h3 {
-    font-size: clamp(1.75rem, 9vw, 2.6rem);
-  }
-
-  .offer-highlight p:not(.section-kicker) {
-    margin-top: 10px;
-    font-size: 0.9rem;
-  }
-
-  .offer-mini-list {
-    grid-template-columns: 1fr;
-    gap: 7px;
-    margin-top: 14px;
-  }
-
-  .offer-mini-list li {
-    padding: 9px 10px;
-    font-size: 0.78rem;
-  }
-
-  .offer-price-callout {
-    padding: 16px;
-  }
-
-  .offer-price-callout strong {
-    font-size: 2.8rem;
   }
 
   .results-track {
@@ -2362,8 +2257,6 @@ body {
 .plan-card h3,
 .section-closing,
 .popular-badge,
-.offer-highlight h3,
-.offer-price-callout strong,
 .price-total,
 .faq-list summary,
 .site-footer p,
@@ -2392,7 +2285,6 @@ body {
 .benefit-card h3,
 .process-card h3,
 .plan-card h3,
-.offer-highlight h3,
 .authority-strip-inner h2,
 .rating-proof strong,
 .instagram-proof strong,
@@ -2406,7 +2298,6 @@ body {
 .result-kicker,
 .popular-badge,
 .price-label em,
-.offer-price-callout span,
 .diagnostic-step,
 .diagnostic-need strong {
   font-weight: 800;
@@ -2440,7 +2331,6 @@ body {
 .secure-note,
 .diagnostic-need span,
 .authority-stats span,
-.offer-mini-list li,
 .price-installment,
 .payment-safe-note span {
   font-weight: 600;
@@ -2508,8 +2398,7 @@ body {
 .process-card,
 .plan-card,
 .faq-list details,
-.payment-safe-note,
-.offer-highlight {
+.payment-safe-note {
   border-color: rgba(204, 255, 0, 0.16);
 }
 
@@ -2518,8 +2407,7 @@ body {
 .instagram-proof,
 .authority-strip-inner,
 .diagnostic-card,
-.plan-card,
-.offer-highlight {
+.plan-card {
   background:
     linear-gradient(145deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.018)),
     rgba(6, 6, 6, 0.86);
@@ -2549,8 +2437,7 @@ body {
 .diagnostic-step,
 .diagnostic-need strong,
 .popular-badge,
-.price-label em,
-.offer-price-callout span {
+.price-label em {
   font-size: 0.76rem;
   font-weight: 650;
 }
@@ -2590,7 +2477,6 @@ body {
 .benefit-card h3,
 .process-card h3,
 .plan-card h3,
-.offer-highlight h3,
 .price-total,
 .faq-list summary,
 .site-footer p,
@@ -2635,9 +2521,8 @@ body {
   border-color: rgba(255, 255, 255, 0.18);
 }
 
-.stars {
-  font-size: clamp(1.5rem, 3vw, 2.35rem);
-  text-shadow: 0 0 16px rgba(255, 211, 56, 0.12);
+.ph-seal {
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.035);
 }
 
 .card-icon,
