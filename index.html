@@ -8,19 +8,11 @@
       content="PHMAX Consultoria Online: treino personalizado, plano alimentar e acompanhamento direto para evoluir com estratégia."
     >
     <title>PHMAX Consultoria Online</title>
-    <link rel="preload" href="assets/phelipe/phelipe-hero-studio.jpg" as="image">
-    <link rel="stylesheet" href="styles.css?v=20260724-minimal">
+    <link rel="preload" href="assets/phelipe/phelipe-hero-front.jpg" as="image">
+    <link rel="stylesheet" href="styles.css?v=20260725-checkout-confirm">
   </head>
   <body>
     <header class="site-header" data-header>
-      <a class="brand" href="#top" aria-label="PHMAX Consultoria Online">
-        <span class="brand-mark">PH</span>
-        <span>
-          <strong>PHMAX</strong>
-          <small>Consultoria Online</small>
-        </span>
-      </a>
-
       <button class="menu-toggle" type="button" data-menu-toggle aria-label="Abrir menu" aria-expanded="false">
         <span></span>
         <span></span>
@@ -53,6 +45,11 @@
             <a class="btn btn-primary" href="#sobre">Quero começar agora</a>
             <p class="urgency">⚠️ Vagas limitadas para acompanhamento individual.</p>
           </div>
+          <div class="hero-flags" aria-label="Atendimento para Brasil, Estados Unidos e Espanha">
+            <span title="Brasil">🇧🇷</span>
+            <span title="Estados Unidos">🇺🇸</span>
+            <span title="Espanha">🇪🇸</span>
+          </div>
           <div class="hero-proof">
             <img src="assets/phelipe/phelipe-profile.jpg" alt="Phelipe Max, personal trainer" width="56" height="56">
             <p>
@@ -66,8 +63,19 @@
       <section class="social-proof-strip" aria-label="Autoridade e prova social PHMAX">
         <div class="social-proof-inner">
           <div class="rating-proof">
-            <span class="ph-seal" aria-hidden="true">
-              <span>PH</span>
+            <span class="ph-seal proof-evolution-mark" aria-hidden="true">
+              <svg viewBox="0 0 48 48" focusable="false">
+                <defs>
+                  <linearGradient id="accent-mark-gradient" x1="8" y1="10" x2="40" y2="38" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#ccff00"/>
+                    <stop offset="1" stop-color="#00ff66"/>
+                  </linearGradient>
+                </defs>
+                <path class="mark-glow" d="M10 34L19 24L27 29L38 13"/>
+                <path class="mark-line" d="M10 34L19 24L27 29L38 13"/>
+                <circle class="mark-dot-start" cx="10" cy="34" r="3.7"/>
+                <circle class="mark-dot-end" cx="38" cy="13" r="3.7"/>
+              </svg>
             </span>
             <div>
               <strong>+3K alunos transformados</strong>
@@ -124,17 +132,6 @@
               <a class="btn btn-primary" href="#planos">Quero meu plano PHMAX</a>
               <button class="diagnostic-reset" type="button" data-diagnostic-reset>Refazer diagnóstico</button>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="authority-strip" aria-label="Consultoria direta com Phelipe Max">
-        <div class="authority-strip-inner">
-          <img src="assets/phelipe/phelipe-authority-real.jpg" alt="Phelipe Max trabalhando na consultoria online" width="86" height="86" loading="lazy">
-          <div>
-            <p class="section-kicker">Consultoria direta</p>
-            <h2>Phelipe Max acompanha sua evolução de perto.</h2>
-            <span>Treino, alimentação e ajustes pensados para sua rotina, sem plano genérico.</span>
           </div>
         </div>
       </section>
@@ -396,8 +393,7 @@
         </div>
 
         <div class="results-note">
-          <strong>Resultado vem de plano bem feito, execução e ajuste.</strong>
-          <span>Cada evolução depende da rotina, constância e adesão ao processo.</span>
+          <span>Resultados variam conforme execução, rotina e adesão ao processo.</span>
         </div>
       </section>
 
@@ -425,14 +421,14 @@
               <li>Suporte WhatsApp</li>
             </ul>
             <div class="price-options" aria-label="Valores do plano PHMAX START">
-              <a class="price-option" href="https://link.infinitepay.io/phelipepersonal/VC1D-16HzrZ8x9w-797,00" target="_blank" rel="noopener">
+              <a class="price-option" href="confirmar-plano.html?plano=start-trimestral">
                 <div class="price-label">
                   <span>Trimestral</span>
                 </div>
                 <strong class="price-total">R$797</strong>
                 <p class="price-installment">ou 3x de <b>R$285,70</b></p>
               </a>
-              <a class="price-option is-best" href="https://link.infinitepay.io/phelipepersonal/VC1D-KAXPL9fZW1-1197,00" target="_blank" rel="noopener">
+              <a class="price-option is-best" href="confirmar-plano.html?plano=start-semestral">
                 <div class="price-label">
                   <span>Semestral</span>
                   <em>Mais fechado</em>
@@ -440,7 +436,7 @@
                 <strong class="price-total">R$1.197</strong>
                 <p class="price-installment">ou 6x de <b>R$220,86</b></p>
               </a>
-              <a class="price-option" href="https://link.infinitepay.io/phelipepersonal/VC1D-U0YdnBKHOm-2097,00" target="_blank" rel="noopener">
+              <a class="price-option" href="confirmar-plano.html?plano=start-anual">
                 <div class="price-label">
                   <span>Anual</span>
                 </div>
@@ -448,7 +444,7 @@
                 <p class="price-installment">ou 12x de <b>R$209,69</b></p>
               </a>
             </div>
-            <a class="btn btn-outline" href="https://link.infinitepay.io/phelipepersonal/VC1D-KAXPL9fZW1-1197,00" target="_blank" rel="noopener">Quero o Start semestral</a>
+            <a class="btn btn-outline" href="confirmar-plano.html?plano=start-semestral">Quero o Start semestral</a>
           </article>
 
           <article class="plan-card featured">
@@ -465,14 +461,14 @@
               <li>E-books exclusivos</li>
             </ul>
             <div class="price-options" aria-label="Valores do plano PHMAX PREMIUM">
-              <a class="price-option" href="https://link.infinitepay.io/phelipepersonal/VC1D-oeTIXw7qZ6-997,00" target="_blank" rel="noopener">
+              <a class="price-option" href="confirmar-plano.html?plano=premium-trimestral">
                 <div class="price-label">
                   <span>Trimestral</span>
                 </div>
                 <strong class="price-total">R$997</strong>
                 <p class="price-installment">ou 3x de <b>R$357,39</b></p>
               </a>
-              <a class="price-option is-best" href="https://link.infinitepay.io/phelipepersonal/VC1D-Uq8nX2gr2I-1597,00" target="_blank" rel="noopener">
+              <a class="price-option is-best" href="confirmar-plano.html?plano=premium-semestral">
                 <div class="price-label">
                   <span>Semestral</span>
                   <em>Mais fechado</em>
@@ -480,7 +476,7 @@
                 <strong class="price-total">R$1.597</strong>
                 <p class="price-installment">ou 6x de <b>R$294,60</b></p>
               </a>
-              <a class="price-option" href="https://link.infinitepay.io/phelipepersonal/VC1D-VD9IBSc99A-2497,00" target="_blank" rel="noopener">
+              <a class="price-option" href="confirmar-plano.html?plano=premium-anual">
                 <div class="price-label">
                   <span>Anual</span>
                 </div>
@@ -488,13 +484,13 @@
                 <p class="price-installment">parcelamento no checkout</p>
               </a>
             </div>
-            <a class="btn btn-primary" href="https://link.infinitepay.io/phelipepersonal/VC1D-Uq8nX2gr2I-1597,00" target="_blank" rel="noopener">Quero o Premium semestral</a>
+            <a class="btn btn-primary" href="confirmar-plano.html?plano=premium-semestral">Quero o Premium semestral</a>
           </article>
         </div>
 
         <div class="payment-safe-note">
           <strong>Pagamento seguro via InfinitePay</strong>
-          <span>Após a compra, você será direcionado para iniciar seu atendimento pelo WhatsApp.</span>
+          <span>Você confirma o plano, paga com segurança e depois me chama no WhatsApp.</span>
         </div>
       </section>
 
@@ -564,6 +560,6 @@
       </svg>
     </a>
 
-    <script src="script.js?v=20260724-minimal"></script>
+    <script src="script.js?v=20260725-checkout-confirm"></script>
   </body>
 </html>

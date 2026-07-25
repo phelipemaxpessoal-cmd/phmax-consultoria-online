@@ -1259,32 +1259,15 @@ ul {
 }
 
 .results-note {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
   width: min(100%, var(--max));
-  margin: 28px auto 0;
-  padding: 22px 24px;
-  border: 1px solid rgba(204, 255, 0, 0.24);
-  border-radius: 8px;
-  background:
-    linear-gradient(90deg, rgba(204, 255, 0, 0.1), rgba(0, 255, 102, 0.04)),
-    rgba(255, 255, 255, 0.025);
-}
-
-.results-note strong {
-  color: var(--green);
-  font-size: 1.02rem;
-  font-weight: 800;
+  margin: 18px auto 0;
+  text-align: center;
 }
 
 .results-note span {
-  max-width: 500px;
-  color: rgba(245, 247, 244, 0.68);
-  font-size: 0.92rem;
-  font-weight: 600;
-  text-align: right;
+  color: rgba(245, 247, 244, 0.42);
+  font-size: 0.78rem;
+  font-weight: 450;
 }
 
 .plans-section {
@@ -2545,5 +2528,805 @@ body {
   .instagram-icon img {
     width: 46px;
     height: 46px;
+  }
+}
+
+/* Approval preview: cleaner premium proportions */
+:root {
+  --font-display: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+  --font-body: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+  --max: 1120px;
+  --green: #b6e900;
+  --green-dark: #97c800;
+  --neon: #20d86c;
+  --green-soft: rgba(182, 233, 0, 0.1);
+  --neon-soft: rgba(32, 216, 108, 0.1);
+  --accent-gradient: linear-gradient(135deg, #b6e900 0%, #20d86c 100%);
+  --accent-gradient-vertical: linear-gradient(180deg, #b6e900 0%, #20d86c 100%);
+}
+
+body {
+  background:
+    radial-gradient(ellipse at 88% 4%, rgba(204, 255, 0, 0.06), transparent 36%),
+    radial-gradient(ellipse at 10% 28%, rgba(0, 255, 102, 0.04), transparent 30%),
+    var(--bg);
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 390;
+  letter-spacing: 0;
+}
+
+.site-header {
+  min-height: 68px;
+  border-color: rgba(204, 255, 0, 0.14);
+  background: rgba(4, 5, 4, 0.78);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.24);
+}
+
+.brand-mark,
+.menu-toggle,
+.hero-proof,
+.rating-proof,
+.instagram-proof,
+.authority-strip-inner,
+.diagnostic-card,
+.benefit-card,
+.process-card,
+.fit-summary,
+.result-card,
+.testimonial-card,
+.plan-card,
+.faq-list details,
+.payment-safe-note {
+  border-color: rgba(204, 255, 0, 0.15);
+  box-shadow: none;
+}
+
+.hero-proof,
+.rating-proof,
+.instagram-proof,
+.authority-strip-inner,
+.diagnostic-card,
+.benefit-card,
+.process-card,
+.fit-summary,
+.plan-card,
+.faq-list details,
+.payment-safe-note {
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.016)),
+    rgba(8, 9, 8, 0.88);
+}
+
+.eyebrow,
+.section-kicker,
+.result-kicker,
+.diagnostic-step,
+.popular-badge,
+.price-label em {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.hero h1,
+.section-copy h2,
+.section-heading h2,
+.fit-summary h2,
+.decision-band h2,
+.final-cta h2,
+.authority-copy h2,
+.diagnostic-card h3,
+.benefit-card h3,
+.process-card h3,
+.plan-card h3,
+.authority-strip-inner h2,
+.rating-proof strong,
+.instagram-proof strong,
+.price-total {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.hero h1 {
+  max-width: 820px;
+  font-size: clamp(3.1rem, 5.8vw, 5.75rem);
+  line-height: 0.98;
+  text-wrap: balance;
+}
+
+.hero-subtitle {
+  max-width: 610px;
+  color: rgba(245, 247, 244, 0.76);
+  font-size: clamp(1.02rem, 1.55vw, 1.24rem);
+  line-height: 1.5;
+}
+
+.hero-flags {
+  display: none;
+}
+
+.section {
+  padding-top: 78px;
+  padding-bottom: 78px;
+}
+
+.section-copy h2,
+.section-heading h2,
+.fit-summary h2,
+.decision-band h2,
+.final-cta h2 {
+  font-size: clamp(2.15rem, 3.7vw, 3.65rem);
+  line-height: 1.04;
+  text-wrap: balance;
+}
+
+.section-copy p:not(.section-kicker),
+.section-heading p:not(.section-kicker),
+.fit-summary p,
+.decision-band p,
+.final-cta p,
+.authority-copy p:not(.section-kicker) {
+  color: rgba(245, 247, 244, 0.66);
+  font-size: clamp(1rem, 1.35vw, 1.12rem);
+  line-height: 1.58;
+  font-weight: 390;
+}
+
+.btn,
+.nav,
+.mobile-sticky-cta {
+  font-family: var(--font-body);
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.btn {
+  min-height: 54px;
+  border-radius: 8px;
+}
+
+.btn-primary,
+.mobile-sticky-cta {
+  box-shadow: 0 16px 34px rgba(32, 216, 108, 0.1);
+}
+
+.ph-seal {
+  overflow: hidden;
+  border-color: rgba(204, 255, 0, 0.36);
+  background:
+    linear-gradient(145deg, rgba(204, 255, 0, 0.12), rgba(0, 255, 102, 0.035)),
+    rgba(5, 5, 5, 0.78);
+}
+
+.proof-evolution-mark svg {
+  width: 34px;
+  height: 34px;
+}
+
+.mark-glow {
+  fill: none;
+  stroke: rgba(32, 216, 108, 0.22);
+  stroke-width: 9;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.mark-line {
+  fill: none;
+  stroke: url(#accent-mark-gradient);
+  stroke-width: 4.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.mark-dot-start {
+  fill: var(--green);
+}
+
+.mark-dot-end {
+  fill: var(--neon);
+}
+
+.social-proof-strip {
+  padding-bottom: 40px;
+}
+
+.social-proof-inner {
+  gap: 12px;
+}
+
+.rating-proof,
+.instagram-proof {
+  min-height: 106px;
+  padding: 20px 22px;
+}
+
+.rating-proof strong,
+.instagram-proof strong {
+  font-size: clamp(1.18rem, 2.15vw, 1.86rem);
+  line-height: 1.08;
+}
+
+.rating-proof span,
+.instagram-proof span {
+  color: rgba(245, 247, 244, 0.62);
+  font-size: clamp(0.86rem, 1.25vw, 1rem);
+  font-weight: 390;
+}
+
+.diagnostic-section {
+  padding-top: 68px;
+}
+
+.diagnostic-card {
+  min-height: 0;
+  padding: 30px;
+}
+
+.diagnostic-card h3 {
+  font-size: clamp(1.6rem, 2.65vw, 2.35rem);
+  line-height: 1.1;
+}
+
+.diagnostic-option {
+  min-height: 56px;
+  font-weight: 560;
+}
+
+.authority-copy h2 {
+  font-size: clamp(2.25rem, 4vw, 4rem);
+  line-height: 1.02;
+  text-wrap: balance;
+}
+
+.benefits-title {
+  font-weight: 700;
+}
+
+.benefit-card,
+.process-card,
+.plan-card {
+  padding: 28px;
+}
+
+.benefit-card h3,
+.process-card h3,
+.plan-card h3 {
+  font-weight: 680;
+}
+
+.process-card span {
+  border-color: rgba(204, 255, 0, 0.24);
+}
+
+.price-total {
+  font-weight: 720;
+}
+
+@media (max-width: 700px) {
+  .site-header {
+    width: min(100% - 30px, var(--max));
+    min-height: 64px;
+    margin-top: 12px;
+    padding: 10px 12px;
+    background: rgba(4, 5, 4, 0.42);
+  }
+
+  .hero {
+    display: flex;
+    align-items: flex-end;
+    min-height: 100svh;
+    padding: 116px 18px 34px;
+  }
+
+  .hero-bg {
+    background-position: 54% top;
+    background-size: auto 103%;
+    transform: none;
+  }
+
+  .hero-overlay {
+    background:
+      linear-gradient(180deg, rgba(5, 5, 5, 0.04) 0%, rgba(5, 5, 5, 0.08) 33%, rgba(5, 5, 5, 0.58) 63%, rgba(5, 5, 5, 0.94) 100%),
+      radial-gradient(ellipse at 52% 72%, rgba(182, 233, 0, 0.1), transparent 42%);
+  }
+
+  .hero-content {
+    display: flex;
+    min-height: calc(100svh - 150px);
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  .hero h1 {
+    max-width: 100%;
+    margin-top: 0;
+    font-size: clamp(2.48rem, 10.6vw, 3.36rem);
+    line-height: 0.98;
+    font-weight: 700;
+    text-shadow: 0 12px 34px rgba(0, 0, 0, 0.62);
+  }
+
+  .hero-subtitle {
+    max-width: 96%;
+    margin-top: 14px;
+    color: rgba(245, 247, 244, 0.82);
+    font-size: 0.98rem;
+    line-height: 1.45;
+    text-shadow: 0 8px 24px rgba(0, 0, 0, 0.62);
+  }
+
+  .hero-actions {
+    gap: 10px;
+    margin-top: 22px;
+  }
+
+  .hero .btn-primary {
+    background: linear-gradient(135deg, #c5ee21 0%, #25dc73 100%);
+  }
+
+  .hero-flags {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    margin-top: 16px;
+  }
+
+  .hero-flags span {
+    display: grid;
+    width: 28px;
+    height: 20px;
+    place-items: center;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 2px;
+    background: rgba(5, 5, 5, 0.42);
+    font-size: 1.04rem;
+    line-height: 1;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
+  }
+
+  .hero-proof {
+    display: none;
+  }
+
+  .urgency {
+    font-size: 0.82rem;
+    font-weight: 520;
+    color: rgba(245, 247, 244, 0.68);
+  }
+
+  .section {
+    padding: 52px 14px;
+  }
+
+  .section-copy h2,
+  .section-heading h2,
+  .fit-summary h2,
+  .decision-band h2,
+  .final-cta h2,
+  .authority-copy h2 {
+    font-size: clamp(2rem, 8.7vw, 2.9rem);
+    line-height: 1.05;
+    font-weight: 700;
+  }
+
+  .section-copy p:not(.section-kicker),
+  .section-heading p:not(.section-kicker),
+  .fit-summary p,
+  .decision-band p,
+  .final-cta p,
+  .authority-copy p:not(.section-kicker) {
+    font-size: 0.98rem;
+    line-height: 1.52;
+  }
+
+  .social-proof-strip {
+    padding: 0 14px 30px;
+  }
+
+  .rating-proof,
+  .instagram-proof {
+    padding: 14px;
+    gap: 12px;
+  }
+
+  .ph-seal,
+  .instagram-icon,
+  .instagram-icon img {
+    width: 46px;
+    height: 46px;
+  }
+
+  .proof-evolution-mark svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  .rating-proof strong,
+  .instagram-proof strong {
+    font-size: 1.06rem;
+  }
+
+  .diagnostic-card {
+    padding: 22px 14px;
+  }
+
+  .diagnostic-card h3 {
+    font-size: clamp(1.45rem, 6.6vw, 2rem);
+  }
+
+  .benefit-card,
+  .process-card,
+  .plan-card {
+    padding: 18px;
+  }
+}
+
+/* Local approval pass: cleaner premium hero and compact menu */
+:root {
+  --green: #acd90a;
+  --green-dark: #8fba08;
+  --neon: #24c968;
+  --green-soft: rgba(172, 217, 10, 0.1);
+  --neon-soft: rgba(36, 201, 104, 0.1);
+  --accent-gradient: linear-gradient(135deg, #bce43a 0%, #24c968 100%);
+  --accent-gradient-vertical: linear-gradient(180deg, #bce43a 0%, #24c968 100%);
+}
+
+.site-header {
+  position: absolute;
+  top: 24px;
+  right: 28px;
+  left: auto;
+  width: auto;
+  min-height: auto;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
+.site-header.is-scrolled {
+  min-height: auto;
+  border-color: transparent;
+  background: transparent;
+}
+
+.brand {
+  display: none;
+}
+
+.menu-toggle {
+  display: grid;
+  width: 58px;
+  height: 58px;
+  place-items: center;
+  border-color: rgba(255, 255, 255, 0.22);
+  border-radius: 8px;
+  background: rgba(5, 5, 5, 0.42);
+  backdrop-filter: blur(14px);
+}
+
+.menu-toggle span {
+  width: 26px;
+  height: 2px;
+  margin: 0;
+}
+
+.menu-toggle span + span {
+  margin-top: -14px;
+}
+
+.menu-open .menu-toggle span:first-child {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.menu-open .menu-toggle span:last-child {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+.nav {
+  position: absolute;
+  top: 72px;
+  right: 0;
+  display: none;
+  width: min(340px, calc(100vw - 34px));
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0;
+  padding: 12px;
+  border: 1px solid rgba(172, 217, 10, 0.18);
+  border-radius: 8px;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02)),
+    rgba(5, 5, 5, 0.94);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.42);
+  backdrop-filter: blur(18px);
+}
+
+.menu-open .nav {
+  display: flex;
+}
+
+.nav a {
+  padding: 14px 13px;
+  border-radius: 8px;
+}
+
+.nav a:hover,
+.nav a:focus-visible {
+  background: rgba(255, 255, 255, 0.045);
+}
+
+.nav-cta {
+  margin-top: 8px;
+  text-align: center;
+}
+
+.hero {
+  min-height: 100svh;
+  padding-top: 118px;
+}
+
+.hero-bg {
+  background-image: url("assets/phelipe/phelipe-hero-front.jpg");
+  background-position: calc(100% - 10vw) center;
+  background-size: auto 108%;
+  filter: brightness(1.04) contrast(1.06) saturate(1.02);
+}
+
+.hero-overlay {
+  background:
+    radial-gradient(ellipse at 78% 24%, rgba(172, 217, 10, 0.12), transparent 34%),
+    radial-gradient(ellipse at 88% 68%, rgba(36, 201, 104, 0.11), transparent 36%),
+    linear-gradient(90deg, rgba(5, 5, 5, 0.99) 0%, rgba(5, 5, 5, 0.88) 33%, rgba(5, 5, 5, 0.48) 66%, rgba(5, 5, 5, 0.18) 100%),
+    linear-gradient(0deg, var(--bg) 0%, rgba(5, 5, 5, 0) 26%);
+}
+
+.hero h1 {
+  max-width: 780px;
+  font-size: clamp(3rem, 5.45vw, 5.4rem);
+  font-weight: 680;
+}
+
+.hero h1 strong {
+  filter: drop-shadow(0 0 12px rgba(172, 217, 10, 0.1));
+}
+
+.authority-strip {
+  display: none;
+}
+
+.process-section {
+  padding-top: 58px;
+}
+
+.whatsapp-float {
+  background:
+    radial-gradient(circle at 32% 22%, rgba(255, 255, 255, 0.28), transparent 30%),
+    var(--accent-gradient);
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.45), 0 0 24px rgba(36, 201, 104, 0.2);
+}
+
+@media (max-width: 700px) {
+  .site-header {
+    top: max(18px, env(safe-area-inset-top));
+    right: 18px;
+    width: auto;
+    min-height: auto;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+  }
+
+  .menu-toggle {
+    width: 54px;
+    height: 54px;
+    background: rgba(5, 5, 5, 0.26);
+  }
+
+  .nav {
+    top: 66px;
+    right: 0;
+    left: auto;
+  }
+
+  .hero {
+    min-height: 100svh;
+    padding: 88px 20px max(26px, env(safe-area-inset-bottom));
+    align-items: stretch;
+  }
+
+  .hero-bg {
+    background-position: 50% top;
+    background-size: auto 104%;
+    transform: none;
+  }
+
+  .hero-overlay {
+    background:
+      linear-gradient(180deg, rgba(5, 5, 5, 0.02) 0%, rgba(5, 5, 5, 0.04) 28%, rgba(5, 5, 5, 0.34) 55%, rgba(5, 5, 5, 0.86) 82%, rgba(5, 5, 5, 0.96) 100%),
+      radial-gradient(ellipse at 50% 72%, rgba(172, 217, 10, 0.08), transparent 40%);
+  }
+
+  .hero-content {
+    width: 100%;
+    min-height: calc(100svh - 114px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    text-align: center;
+  }
+
+  .eyebrow {
+    display: none;
+  }
+
+  .hero h1 {
+    max-width: 355px;
+    margin: 0 auto;
+    font-size: clamp(2.05rem, 8.5vw, 2.8rem);
+    line-height: 1.04;
+    text-align: center;
+    text-shadow: 0 12px 34px rgba(0, 0, 0, 0.7);
+  }
+
+  .hero h1 span {
+    display: block;
+    margin-top: 4px;
+  }
+
+  .hero-subtitle {
+    max-width: 350px;
+    margin: 14px auto 0;
+    color: rgba(245, 247, 244, 0.84);
+    font-size: 0.94rem;
+    line-height: 1.42;
+    text-align: center;
+  }
+
+  .hero-actions {
+    width: min(100%, 350px);
+    justify-content: center;
+    margin-top: 18px;
+  }
+
+  .hero .btn-primary {
+    width: 100%;
+    min-height: 54px;
+    background: var(--accent-gradient);
+  }
+
+  .urgency {
+    order: 2;
+    margin-top: 2px;
+    color: rgba(245, 247, 244, 0.72);
+    font-size: 0.78rem;
+  }
+
+  .hero-flags {
+    display: flex;
+    align-self: flex-start;
+    gap: 6px;
+    margin: 14px 0 0 2px;
+  }
+
+  .hero-flags span {
+    width: 30px;
+    height: 20px;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    font-size: 1.15rem;
+  }
+
+  .social-proof-strip {
+    padding-top: 30px;
+  }
+
+  .mobile-sticky-cta {
+    width: min(100% - 28px, 390px);
+    right: 14px;
+    left: 14px;
+    bottom: max(14px, env(safe-area-inset-bottom));
+    margin-inline: auto;
+    border-radius: 8px;
+  }
+
+  .whatsapp-float {
+    right: 18px;
+    bottom: max(22px, env(safe-area-inset-bottom));
+    width: 58px;
+    height: 58px;
+  }
+
+  body.show-mobile-cta .whatsapp-float {
+    bottom: calc(max(22px, env(safe-area-inset-bottom)) + 78px);
+  }
+}
+
+/* Local approval adjustment: tighter mobile hero crop and compact proof */
+@media (max-width: 700px) {
+  .hero-bg {
+    background-position: 50% -126px;
+    background-size: auto 114%;
+  }
+
+  .hero-overlay {
+    background:
+      linear-gradient(180deg, rgba(5, 5, 5, 0.02) 0%, rgba(5, 5, 5, 0.06) 24%, rgba(5, 5, 5, 0.32) 50%, rgba(5, 5, 5, 0.86) 80%, rgba(5, 5, 5, 0.96) 100%),
+      radial-gradient(ellipse at 50% 72%, rgba(172, 217, 10, 0.07), transparent 40%);
+  }
+
+  .social-proof-strip {
+    padding: 20px 18px 22px;
+  }
+
+  .social-proof-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .rating-proof,
+  .instagram-proof {
+    min-height: 0;
+    grid-template-columns: 1fr;
+    justify-items: start;
+    gap: 8px;
+    padding: 12px;
+    border-color: rgba(172, 217, 10, 0.12);
+    background:
+      linear-gradient(145deg, rgba(255, 255, 255, 0.032), rgba(255, 255, 255, 0.012)),
+      rgba(8, 9, 8, 0.72);
+  }
+
+  .ph-seal,
+  .instagram-icon,
+  .instagram-icon img {
+    width: 34px;
+    height: 34px;
+    border-radius: 9px;
+  }
+
+  .proof-evolution-mark svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .rating-proof strong,
+  .instagram-proof strong {
+    font-size: 0.88rem;
+    line-height: 1.12;
+  }
+
+  .rating-proof span,
+  .instagram-proof span {
+    margin-top: 3px;
+    font-size: 0.7rem;
+    line-height: 1.25;
+  }
+
+  .results-note {
+    margin-top: 14px;
+    padding: 0 12px;
+    text-align: center;
+  }
+
+  .results-note span {
+    max-width: 320px;
+    margin: 0 auto;
+    color: rgba(245, 247, 244, 0.38);
+    font-size: 0.7rem;
+    line-height: 1.35;
+    text-align: center;
   }
 }
